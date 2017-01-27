@@ -17,37 +17,61 @@
 
 var scores = [82, 71, 95, 55, 98, 69, 72, 78, 84, 64, 58, 87];
 // console.log(scores);
+var A = 0;
+var B = 0;
+var C = 0;
+var D = 0;
+var F = 0;
+
+var AArray = [];
+var BArray = [];
+var CArray = [];
+var DArray = [];
+var FArray = [];
+
+var DOM = document.getElementById("gradesDiv");
 
 
 for (var i = 0; i < scores.length; i++) {
 	// console.log(scores[i]);
 
 	if (scores[i] < 60) {
-		console.log(scores[i] + " = F");
+		F += 1;
+		FArray.push(scores[i]);
 	}
 
 	else if (scores[i] < 70) {
-		console.log(scores[i] + " = D");
+		D += 1;
+		DArray.push(scores[i]);
 	}
 
 	else if (scores[i] < 80) {
-		console.log(scores[i] + " = C");
+		C += 1;
+		CArray.push(scores[i]);
 	}
 
 	else if (scores[i] < 90) {
-		console.log(scores[i] + " = B");
+		B += 1;
+		BArray.push(scores[i]);
 	}
 
 	else {
-		console.log(scores[i] + " = A");	
+		A += 1;
+		AArray.push(scores[i]);
 	}
 }	
 
+DOM.innerHTML = "<div>There are "+F+" F's: "+FArray+"</div>";
+DOM.innerHTML += "<div>There are "+D+" D's: "+DArray+"</div>";
+DOM.innerHTML += "<div>There are "+C+" C's: "+CArray+"</div>";
+DOM.innerHTML += "<div>There are "+B+" B's: "+BArray+"</div>";
+DOM.innerHTML += "<div>There are "+A+" A's: "+AArray+"</div>";
+
 var max_of_array = Math.max.apply(Math, scores);
-console.log("The highest grade: " + max_of_array);
+DOM.innerHTML += "<div>The highest grade: " + max_of_array;
 
 var min_of_array = Math.min.apply(Math, scores);
-console.log("The lowest grade: " + min_of_array);
+DOM.innerHTML += "<div>The lowest grade: " + min_of_array+"</div>";
 
 // var gradesDiv = document.getElementById("gradesDiv");
 // gradesDiv.innerHTML += "<div>" + scores[i] + "</div>";
