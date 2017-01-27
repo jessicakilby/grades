@@ -16,7 +16,7 @@
 
 
 var scores = [82, 71, 95, 55, 98, 69, 72, 78, 84, 64, 58, 87];
-// console.log(scores);
+
 var A = 0;
 var B = 0;
 var C = 0;
@@ -34,7 +34,7 @@ var DOM = document.getElementById("gradesDiv");
 
 for (var i = 0; i < scores.length; i++) {
 	// console.log(scores[i]);
-
+	DOM.innerHTML = "<div>Here are the scores: "+scores+"</div>";
 	if (scores[i] < 60) {
 		F += 1;
 		FArray.push(scores[i]);
@@ -61,7 +61,7 @@ for (var i = 0; i < scores.length; i++) {
 	}
 }	
 
-DOM.innerHTML = "<div>There are "+F+" F's: "+FArray+"</div>";
+DOM.innerHTML += "<div>There are "+F+" F's: "+FArray+"</div>";
 DOM.innerHTML += "<div>There are "+D+" D's: "+DArray+"</div>";
 DOM.innerHTML += "<div>There are "+C+" C's: "+CArray+"</div>";
 DOM.innerHTML += "<div>There are "+B+" B's: "+BArray+"</div>";
@@ -73,17 +73,4 @@ DOM.innerHTML += "<div>The highest grade: " + max_of_array;
 var min_of_array = Math.min.apply(Math, scores);
 DOM.innerHTML += "<div>The lowest grade: " + min_of_array+"</div>";
 
-// var gradesDiv = document.getElementById("gradesDiv");
-// gradesDiv.innerHTML += "<div>" + scores[i] + "</div>";
-
-// switch(true){
-	// case scores[i] < 60
-	// 	gradeF.f++;
-	// 	console.log("F");
-	// 	break;
-	// case scores[i] < 70
-	// 	gradeF.d++;
-	// 	console.log("D");
-	// 	break;	
-	// }	
 
